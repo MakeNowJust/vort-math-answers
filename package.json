@@ -1,0 +1,16 @@
+{
+  "name": "vort-math-answers",
+  "description": "math answers for vort",
+  "version": "0.0.1",
+  "private": true,
+  "author": "Tsuyusato Kitsune",
+  "dependencies": {
+    "node-static": "^0.7.3"
+  },
+  "devDependencies": {
+    "gulp-util": "^2.2.14",
+    "gulp": "^3.5.6",
+    "gulp-jade": "^0.4.2",
+    "lodash": "^2.4.1"
+  }
+}

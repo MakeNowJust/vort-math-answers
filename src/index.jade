@@ -1,0 +1,53 @@
+doctype html
+
+html(lang='ja')
+  head
+    meta(charset='utf-8')
+    title vort-math-answers
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css')
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js')
+    script(src='//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')
+    script(type='text/x-mathjax-config').
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+        },
+      });
+    script(src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML')
+  body
+    div.navbar.navbar-default.navbar-static-top
+      div.container
+        div.navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+            span.sr-only vort-math-answers
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='#') vort-math-answers
+        div.navbar-collapse.collapse
+          ul.nav.navbar-nav
+            li.dropdown
+              a.dropdown-toggle(data-toggle='dropdown') Select
+                b.caret
+              ul.dropdown-menu
+                - for(var i = 32; i <= 46; i++)
+                  li
+                    a(href='##{i}') #{i}
+    div.container
+      h1 vort-math-answers
+      p
+        |ポテト46本な
+      div.row
+        for ans, i in answers
+          div.col-md-12
+            h2(id='#{i+32}') #{i+32}
+            table.table
+              thead
+                tr
+                  th 問題
+                  th 解答
+              tbody
+                for a, j in ans
+                  tr
+                    td $ #{a[0]}$
+                    td $ #{a[1]}$
